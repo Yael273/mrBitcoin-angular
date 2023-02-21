@@ -1,0 +1,12 @@
+<main class=" home-page">
+    <div *ngIf="!start" class="welcome">
+        <h1>Mr. Bitcoin</h1>
+        <h2>An innovative payment network and a new kind of money.</h2>
+        <button (click)="start = !start" class="btn">Start now</button>
+    </div>
+
+    <div *ngIf="start">
+       login sign ap component
+    </div>
+   
+</main>

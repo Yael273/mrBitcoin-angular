@@ -1,0 +1,165 @@
+// COLOR PALETTE
+// $clr1: #9cc2dd;
+$clr1: rgba(6, 86, 86, 0.882);
+$clr2: #000;
+$clr3: #fff;
+$clr4: darken($clr3, 40%);
+$clr5: #2d2d2d;
+// $main-clr: #0d7e80;
+$main-clr: #6ddddf;
+$main-clr2: rgba(0, 139, 139, 0.267);
+$main-clr3: rgba(138, 199, 199, 0.921);
+$main-clr4: #946810;
+$main-clr5: #fbc524;
+// $bg-clr: #e7f5f5;
+$bg-clr: #344444;
+
+// LAYOUT
+$layoutPadding: 100px;
+
+// LAYOUT BREAKPOINTS
+$break-narrow: 1200px;
+$break-normal: 1360px;
+$break-wide: 1920px;
+
+$padded-break-narrow: $break-narrow + $layoutPadding * 2;
+$padded-break-normal: $break-normal + $layoutPadding * 2;
+$padded-break-wide: $break-wide + $layoutPadding * 2;
+
+.home-page {
+    font-family: product-sans-bold, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    .welcome {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 200px;
+
+        h1 {
+            font-size: 100px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        button {
+            padding: 15px 50px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+
+    &-user {
+        background: url('/src/assets/img/coin.png');
+        background-repeat: no-repeat;
+        // background-size: 2000px;
+        background-position: center top;
+        // background-position-y:-100px;
+        background-position-y: -400px;
+        // height: 100vh;
+        background: inherit;
+
+        .user-info {
+            //OPTION 1
+            background-color: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(20px);
+
+            //OPTION 2
+            // background-color: rgba(255, 255, 255, 0.322);
+            // -webkit-backdrop-filter: blur(2em);
+            // backdrop-filter: blur(2em);
+
+            padding: 20px 100px;
+
+            margin: 50px auto;
+
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 2rem;
+
+            height: fit-content;
+            margin-bottom: 40px;
+            width: fit-content;
+            // background: url('/src/assets/img/coin.png');
+            // background-repeat: no-repeat;
+            // background-size:auto;
+            // background-size: 800px;
+
+            img {
+                width: 250px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            h3 {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // background-color: #e7f5f5;
+                // background-color: #0a4d50;
+                background-color: rgb(232, 178, 28);
+                backdrop-filter: blur(20px);
+                padding: 10px 50px;
+                border-radius: 1rem;
+                font-size: 20px;
+
+                span {
+                    font-size: 70px;
+                    color: white;
+                }
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+        }
+    }
+}
+
+@font-face {
+    font-family: product-sans-bold;
+    src: url(../../../assets/font/ProductSansBold.ttf);
+}
+
+@media screen and (max-width: 675px) {
+    .home-page {
+
+        .welcome {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            margin: 20px auto;
+            padding: 10px;
+
+            h1 {
+                font-size: 80px;
+            }
+
+
+        }
+
+        &-user {
+          margin: 20px;
+            .user-info {
+               padding: 10px 30px;
+               width: fit-content;
+            }
+        }
+
+    }
+}

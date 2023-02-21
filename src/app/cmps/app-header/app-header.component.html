@@ -1,0 +1,13 @@
+<header>
+  <div routerLink="/home" class="logo">
+    <img src="../../assets/img/DollarGoldCoin.png" alt="" />
+    <h1>Mr. Bitcoin</h1>
+  </div>
+
+    <nav *ngIf="user" class="nav-btns">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      <a routerLink="/contact" routerLinkActive="active">Contacts</a>
+      <a routerLink="/stats/avg" routerLinkActive="active">Stats</a>
+  </nav>
+   
+  </header>

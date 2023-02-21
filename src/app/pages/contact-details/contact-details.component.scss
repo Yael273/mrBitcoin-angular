@@ -1,0 +1,202 @@
+// COLOR PALETTE
+// $clr1: #9cc2dd;
+$clr1: rgba(6, 86, 86, 0.882);
+$clr2: #000;
+$clr3: #fff;
+$clr4: darken($clr3, 40%);
+$clr5: #2d2d2d;
+// $main-clr: #0d7e80;
+$main-clr: #6ddddf;
+$main-clr2: rgba(0, 139, 139, 0.267);
+$main-clr3: rgba(138, 199, 199, 0.921);
+$main-clr4: #0a4d50;
+// $main-clr5: #1346ebc2;
+// $main-clr5: rgb(5 46 4 / 82%);
+$main-clr5: #0a4d50;
+;
+// $main-clr5: #d7a100;
+// $bg-clr: #e7f5f5;
+$bg-clr: #344444;
+
+.contact-details {
+    // background-color: $main-clr3;
+    //OPTION 1
+    // background-color: rgba(255, 255, 255, .5);
+    // -webkit-backdrop-filter: blur(2em);
+    // backdrop-filter: blur(2em);
+
+    //OPTION 2
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(20px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    padding: 50px 100px;
+    border-radius: 2rem;
+    margin: 20px auto;
+    width: 700px;
+    height: fit-content;
+
+    .transfer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+        background-color: $main-clr4;
+        border-radius: 0.5rem;
+        margin: 20px;
+
+        &label {
+            text-align: center;
+        }
+    }
+
+    // box-shadow: 9px 12px 0px 0px $main-clr5 ;
+
+    img {
+        width: 200px;
+        border-radius: 50%;
+        border: white 2px solid;
+        background-color: $main-clr5;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: transparent;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: white;
+        font-weight: 700;
+
+        img {
+            width: 40px;
+            border-radius: 0;
+            border: none;
+            background-color: transparent
+        }
+
+        &:hover {
+            transition: 0.2s;
+            opacity: 0.5;
+        }
+
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+
+        .info-details {
+            background-color: azure;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+
+
+            h3 {
+                background-color: $main-clr5;
+
+                color: azure;
+                margin: 0;
+                padding: 20px;
+
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+
+            p {
+                padding: 20px;
+                color: $main-clr5;
+            }
+
+
+        }
+
+
+    }
+
+}
+
+.info-details-transfer {
+    background-color: $main-clr3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    padding: 50px 100px;
+    border-radius: 2rem;
+    margin: 20px auto;
+    width: 700px;
+    height: fit-content;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.try {
+    // display: flex;
+    // align-items: center;
+    background: url('../../../assets/img/coin.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -300px;
+    // background-position-x:200px;
+    min-height: calc(100vh - 100px);
+
+    h3 {
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .contact-details {
+
+        padding: 30px 40px;
+        width: fit-content;
+
+        .back-btn{
+            img{
+                width: 20px;
+            }
+        }
+
+        .info {
+            flex-direction: column;
+            align-items: stretch;
+            text-align: center;
+
+            .info-details {
+                h3 {
+                    padding: 10px;
+                }
+
+                p {
+                    padding: 12px;
+                    font-size: 12px;
+                    margin: 0;
+                }
+            }
+
+        }
+    }
+
+    .try{
+        background:none;
+    }
+}

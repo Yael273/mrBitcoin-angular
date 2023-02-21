@@ -1,0 +1,25 @@
+<!-- <main class=" home-page">
+    <div class="welcome">
+        <h1>Mr. Bitcoin</h1>
+        <h2>An innovative payment network and a new kind of money.</h2>
+        <button (click)="start = !start" class="btn">Start now</button>
+    </div>
+
+    <div *ngIf="start">
+       login sign ap component
+    </div>
+
+</main> -->
+
+<main class=" home-page-user">
+    
+    <div class="user-info">
+      <img src="https://robohash.org/{{currUser}}?set=set5" alt="">
+      <h1>{{currUser.name}}</h1>
+    <h3>Coins <span>{{currUser.coins}}</span></h3>
+    <p>1$ = {{ exchangeRate }}₿</p>
+      <!-- <h1>{{ currUser.name }}</h1>
+    <h3>Your balance <span>{{ currUser.coins }}</span></h3>
+    <p  v-if="exchangeRate">1$ = {{ exchangeRate }}₿</p> -->
+    </div>
+</main>
