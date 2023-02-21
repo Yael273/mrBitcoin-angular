@@ -1,12 +1,20 @@
 <main class=" home-page">
     <div *ngIf="!start" class="welcome">
-        <h1>Mr. Bitcoin</h1>
-        <h2>An innovative payment network and a new kind of money.</h2>
+        <h1>{{logo | naturalType: 100}}</h1>
+        <!-- <h2>{{intro | naturalType: 20}}</h2> -->
+        <h2>{{intro}}</h2>
         <button (click)="start = !start" class="btn">Start now</button>
     </div>
 
-    <div *ngIf="start">
-       login sign ap component
-    </div>
+    <section *ngIf="start" class="contact-edit">
+        <h2>Signup</h2>
+        <form (ngSubmit)="onAddUser()">
+            <label for="name">Name</label>
+            <input [(ngModel)]="user.name" type="text" name="name" id="name">
+    
+            <button class="btn">Save</button>
+        </form>
+    </section>
    
 </main>
+

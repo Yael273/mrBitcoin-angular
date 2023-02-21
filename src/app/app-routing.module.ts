@@ -31,9 +31,7 @@ children: [
 {
     path: 'contact', component: ContactIndexComponent, 
     children: [
-        { path: 'edit/:id', component: ContactEditComponent,
-         resolve: { contact: ContactResolver },
-         },
+        { path: 'edit/:id', component: ContactEditComponent, resolve: { contact: ContactResolver }},
         { path: 'edit', component: ContactEditComponent }
     ]
 },

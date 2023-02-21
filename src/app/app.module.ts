@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { ValueChartComponent } from './cmps/value-chart/value-chart.component';
 import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
+import { NaturalTypePipe } from './pipes/natural-type.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginSignupComponent } from './pages/login-signup/login-signup.componen
     StatisticPageComponent,
     AppHeaderComponent,
     ValueChartComponent,
-    LoginSignupComponent
+    LoginSignupComponent,
+    NaturalTypePipe
   ],
   imports: [
     BrowserModule,

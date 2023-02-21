@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
@@ -10,7 +11,7 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ContactIndexComponent {
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private router: Router) { }
 
   contacts!: Contact[]
   contacts$!: Observable<Contact[]>
