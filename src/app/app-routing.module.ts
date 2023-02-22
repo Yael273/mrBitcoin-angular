@@ -10,9 +10,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
 import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
 import { ContactResolver } from './services/contact.resolver';
-import { UserResolver } from './services/user.resolver';
+// import { UserResolver } from './services/user.resolver';
 
 const routes: Routes = [
+  { path: 'contact/edit', component: ContactEditComponent },
+    
   { path: '', redirectTo: 'signup', pathMatch: 'prefix' },
   {
     path: 'contact/:id',
@@ -36,8 +38,13 @@ const routes: Routes = [
   {
     path: 'contact', component: ContactIndexComponent,
     children: [
-      { path: 'edit/:id', component: ContactEditComponent, resolve: { contact: ContactResolver } },
-      { path: 'edit', component: ContactEditComponent }
+      // { path: 'edit/:id', component: ContactEditComponent, resolve: { contact: ContactResolver } },
+      // { path: 'edit', component: ContactEditComponent }
+      {
+        path: 'edit/:id', component: ContactEditComponent,
+        resolve: { contact: ContactResolver }
+    },
+   
     ]
   },
 ];

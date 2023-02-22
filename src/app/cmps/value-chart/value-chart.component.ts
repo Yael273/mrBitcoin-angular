@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { bitcoinService } from 'src/app/services/bitcoin.service';
+import { BitcoinService } from 'src/app/services/bitcoin.service';
 Chart.register(...registerables);
 
 @Component({
@@ -11,9 +11,12 @@ Chart.register(...registerables);
 export class ValueChartComponent {
   MarketPrice: any = null
 
+  constructor(
+    public bitcoinService: BitcoinService) {}
+
   async ngOnInit() {
 
-    this.MarketPrice = await bitcoinService.getMarketPriceHistory()
+    this.MarketPrice = await this.bitcoinService.getMarketPrice()
 
     var myChart = new Chart("myChart1", {
       type: 'line',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { bitcoinService } from 'src/app/services/bitcoin.service';
+import { BitcoinService } from 'src/app/services/bitcoin.service';
 Chart.register(...registerables);
 
 @Component({
@@ -12,9 +12,13 @@ export class ChartComponent {
 
   avgBlockSize: any = null
 
+  constructor(
+    public bitcoinService: BitcoinService) {}
+
+
   async ngOnInit() {
 
-    this.avgBlockSize = await bitcoinService.getAvgBlockSize()
+    this.avgBlockSize = await this.bitcoinService.getAvgBlockSize()
 
     var myChart = new Chart("myChart", {
       type: 'line',

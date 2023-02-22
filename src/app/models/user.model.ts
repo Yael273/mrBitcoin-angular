@@ -4,7 +4,7 @@ export class User {
     constructor(
         public name: string = '',
         public coins: number = 100,
-        public moves: string[]
+        public moves: Move[]
         ) {
     }
   
@@ -13,15 +13,10 @@ export class User {
     }
   }
   
-
-// export interface User {
-//     _id: string
-//     name: string
-//     coins: number
-//     moves: []
-// }
-
-// export interface UserFilter {
-//     term: string
-// }
-// // _id: 'p123', name: 'Penrose', age: 2, birthDate: new Date('2020-11-12')
+  export interface Move {
+    toId: string,
+    to: string,
+    at: number,
+    amount: number
+  }
+  

@@ -5,6 +5,6 @@
       <!-- <h1 >{{currUser.name | naturalType: 200}}</h1> -->
       <h1>{{currUser.name}}</h1>
     <h3>Coins <span>{{currUser.coins}}</span></h3>
-    <p>1$ = {{ exchangeRate }}₿</p>
+    <p>1$ = {{rate$|async}}₿</p>
     </div>
 </main>

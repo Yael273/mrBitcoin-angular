@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./statistic-page.component.scss']
 })
 export class StatisticPageComponent {
-  selectedCmp = 'avg';
-
-  selectCmp(cmpName: string) {
-    this.selectedCmp = cmpName;
-  }
-
-  showCmp(cmpName: string) {
-    return this.selectedCmp === cmpName;
-  }
+ 
 }

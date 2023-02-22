@@ -134,9 +134,9 @@ export class ContactService {
     private _contactFilter$ = new BehaviorSubject<ContactFilter>({ term: '' });
     public contactFilter$ = this._contactFilter$.asObservable()
 
-    constructor() {
-    }
 
+
+    constructor() { }
 
     public loadContacts(): void {
         const filterBy = this._contactFilter$.value
@@ -147,20 +147,13 @@ export class ContactService {
         this._contacts$.next(this._sort(contacts))
     }
 
-
     public getContactById(id: string): Observable<Contact> {
-        //mock the server work
         const contact = this._contactsDb.find(contact => contact._id === id)
-        
-        //return an observable
         return contact ? of(contact) : throwError(() => `Contact id ${id} not found!`)
     }
 
     public deleteContact(id: string) {
-        //mock the server work
         this._contactsDb = this._contactsDb.filter(contact => contact._id !== id)
-
-        // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._contactsDb)
     }
 
@@ -169,33 +162,23 @@ export class ContactService {
     }
 
     public getEmptyContact() {
-        return { name: '', email: '', phone: '' }
+        return {
+            name: '',
+            email: '',
+            phone: ''
+        }
     }
 
     private _updateContact(contact: Contact) {
-        // const contacts = this._contactsDb
-        // const contactIdx = contacts.findIndex(_contact => _contact._id === contact._id)
-        // contacts.splice(contactIdx, 1, contact)
-        // this._contacts$.next(contacts)
-        // return of(contact)
-        //mock the server work
         this._contactsDb = this._contactsDb.map(c => contact._id === c._id ? contact : c)
-        // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._sort(this._contactsDb))
-        return of(contact)
     }
 
     private _addContact(contact: Contact) {
-        // contact._id = getRandomId()
-        // this._contactsDb.push(contact)
-        // this._contacts$.next(this._contactsDb)
-        // return of(contact)
-        //mock the server work
         const newContact = new Contact(contact.name, contact.email, contact.phone);
         if (typeof newContact.setId === 'function') newContact.setId(getRandomId());
         this._contactsDb.push(newContact)
         this._contacts$.next(this._sort(this._contactsDb))
-        return of(contact)
     }
 
     private _sort(contacts: Contact[]): Contact[] {
@@ -215,7 +198,7 @@ export class ContactService {
         this.loadContacts()
     }
 
-    private _filter(contacts: Contact[] , term: string) {
+    private _filter(contacts: Contact[], term: string) {
         term = term.toLocaleLowerCase()
         return contacts.filter(contact => {
             return contact.name.toLocaleLowerCase().includes(term) ||

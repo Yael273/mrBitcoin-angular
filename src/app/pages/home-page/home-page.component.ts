@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user.model';
-import { bitcoinService } from 'src/app/services/bitcoin.service';
+import { BitcoinService } from 'src/app/services/bitcoin.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -14,20 +15,16 @@ export class HomePageComponent {
 
   constructor(private userService: UserService,
     private cd: ChangeDetectorRef,
+    public bitcoinService: BitcoinService,
     private route: ActivatedRoute) { }
 
   start = false
   currUser!: User
   exchangeRate!: number
+  rate$!: Observable<string>
 
   async ngOnInit(): Promise<void> {
     this.currUser = this.userService.getUser()
-    
-    // this.currUser = this.route.snapshot.data['user'];
-    this.cd.detectChanges()
-    console.log('this.currUser', this.currUser );
-
-    this.exchangeRate = await bitcoinService.getRate()
-
+    this.rate$ = this.bitcoinService.getRateStream()
   }
 }
