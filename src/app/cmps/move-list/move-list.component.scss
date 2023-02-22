@@ -1,0 +1,35 @@
+.move-list {
+    text-align: center;
+    display: grid;
+    gap: 10px;
+    width: 700px;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    // background-color: lightblue;
+
+    list-style-type: none;
+    padding: 20px 0px;
+
+    margin: auto;
+    // display: flex;
+    // flex-direction: column;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+@media screen and (max-width: 675px) {
+    .move-list-section {
+        margin: auto;
+        // width: 100vw;
+    }
+    
+    .move-list{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        padding: 0px;
+    }
+}

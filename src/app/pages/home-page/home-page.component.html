@@ -1,10 +1,13 @@
 <main class=" home-page-user">
-    <!-- <h1>Welcome, <span>{{currUser.name | naturalType: 200}}</span></h1> -->
+    <h1>Welcome, <span>{{currUser.name | naturalType: 200}}</span></h1>
     <div class="user-info">
-      <img src="https://robohash.org/{{currUser}}?set=set5" alt="">
+      <!-- <img src="https://robohash.org/{{currUser}}?set=set5" alt=""> -->
       <!-- <h1 >{{currUser.name | naturalType: 200}}</h1> -->
-      <h1>{{currUser.name}}</h1>
-    <h3>Coins <span>{{currUser.coins}}</span></h3>
+      <!-- <h1>{{currUser.name}}</h1> -->
+    <h3>Your coins <span>{{currUser.coins}}</span></h3>
     <p>1$ = {{rate$|async}}₿</p>
     </div>
-</main>
+    
+    <h2>Your last moves</h2>
+    <move-list *ngIf="currUser.moves.length" [moves]="getLastMoves()"></move-list>
+  </main>

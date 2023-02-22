@@ -39,21 +39,6 @@ $bg-clr: #344444;
     width: 700px;
     height: fit-content;
 
-    .transfer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-        padding: 20px;
-        background-color: $main-clr4;
-        border-radius: 0.5rem;
-        margin: 20px;
-
-        &label {
-            text-align: center;
-        }
-    }
 
     // box-shadow: 9px 12px 0px 0px $main-clr5 ;
 
@@ -162,13 +147,35 @@ $bg-clr: #344444;
         margin: auto;
         text-align: center;
     }
+
+    h2{
+        margin: auto;
+        text-align: center;
+    }
+    
+    .transfer {
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(20px);
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        padding: 50px 100px;
+        border-radius: 2rem;
+        margin: 20px auto;
+        width: 700px;
+        height: fit-content;
+    }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 675px) {
     .contact-details {
 
         padding: 30px 40px;
         width: fit-content;
+        border-radius: 0.5rem;
+        margin: 10px auto;
 
         .back-btn{
             img{
@@ -198,5 +205,11 @@ $bg-clr: #344444;
 
     .try{
         background:none;
+
+        .transfer{
+            width: fit-content;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
     }
 }

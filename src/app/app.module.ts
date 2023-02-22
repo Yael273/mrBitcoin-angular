@@ -19,6 +19,9 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { ValueChartComponent } from './cmps/value-chart/value-chart.component';
 import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
 import { NaturalTypePipe } from './pipes/natural-type.pipe';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { MoveListComponent } from './cmps/move-list/move-list.component';
+import { MovePreviewComponent } from './cmps/move-preview/move-preview.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { NaturalTypePipe } from './pipes/natural-type.pipe';
     AppHeaderComponent,
     ValueChartComponent,
     LoginSignupComponent,
-    NaturalTypePipe
+    NaturalTypePipe,
+    TransferFundComponent,
+    MoveListComponent,
+    MovePreviewComponent
   ],
   imports: [
     BrowserModule,

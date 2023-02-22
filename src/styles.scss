@@ -233,4 +233,12 @@ a {
 
     }
 }
+@media screen and (max-width: 375px) {
+
+    .main-layout {
+        display: grid;
+    grid-template-columns: 10px 1fr 10px;
+
+    }
+}
 
