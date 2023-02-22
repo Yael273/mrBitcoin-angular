@@ -1,10 +1,16 @@
 import { Injectable } from "@angular/core"
+import { BehaviorSubject, Observable } from "rxjs"
+import { User } from "../models/user.model"
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class UserService {
+
+    // private _usersDb: User[] = CONTACTS;
+    // private _users$ = new BehaviorSubject<User[]>([])
+    // public users$ = this._users$.asObservable()
 
     STORAGE_KEY = 'userDB'
     STORAGE_KEY_LOGGEDIN = 'loggedinUser'
@@ -69,7 +75,8 @@ export class UserService {
         const userToSave = {
             name: user.name,
             coins: user.coins,
-            moves: user.moves
+            moves: user.moves,
+            _id: user._id
         }
         localStorage.setItem("loggedinUser", JSON.stringify(userToSave))
         return userToSave
@@ -80,12 +87,14 @@ export class UserService {
             name: '',
             coins: 100,
             moves: [],
+            _id: this._makeId()
             // imgId: 
         }
     }
 
     public getById(userId: string) {
-        return this.get(this.STORAGE_KEY, userId)
+        return this.get("loggedinUser", userId)
+        // return this.get("userDB", userId)
     }
 
     // public transferFunds(name, amount) {

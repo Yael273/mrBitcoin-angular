@@ -22,7 +22,6 @@ export class LoginSignupComponent {
   intro = 'An innovative payment network and a new kind of money.'
   user!: User
 
-
   ngOnInit(): void {
     this.user = this.userService.getEmptyCredentials()
     console.log('this.user', this.user);

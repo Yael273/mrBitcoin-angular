@@ -2,13 +2,13 @@
     <h2>{{contact._id ? 'Edit' : 'Add'}} contact</h2>
     <form (ngSubmit)="onAddContact()">
         <label for="name">Name</label>
-        <input [(ngModel)]="contact.name" type="text" name="name" id="name">
+        <input [(ngModel)]="contact.name" type="text" name="name" id="name" placeholder="Enter name">
 
         <label for="age">Email</label>
-        <input [(ngModel)]="contact.email" type="email" name="email" id="email">
+        <input [(ngModel)]="contact.email" type="email" name="email" id="email" placeholder="Example@email.com">
         
         <label for="phone">Phone number</label>
-        <input [(ngModel)]="contact.phone" type="tel" name="phone" id="phone">
+        <input [(ngModel)]="contact.phone" type="tel" name="phone" id="phone" placeholder="0123456789">
 
         <button class="btn">Save</button>
     </form>

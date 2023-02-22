@@ -6,15 +6,14 @@
         <button (click)="start = !start" class="btn">Start now</button>
     </div>
 
-    <section *ngIf="start" class="contact-edit">
+    <section *ngIf="start" class="user-login">
         <h2>Signup</h2>
         <form (ngSubmit)="onAddUser()">
             <label for="name">Name</label>
-            <input [(ngModel)]="user.name" type="text" name="name" id="name">
+            <input [(ngModel)]="user.name" type="text" name="name" id="name" placeholder="Enter name">
     
             <button class="btn">Save</button>
         </form>
     </section>
    
 </main>
-
