@@ -1,27 +1,49 @@
-# ExMrBitcoin
+# MrBitcoin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+An app I wrote using Angular, in which you can transfer money to your fake contacts, CRUDL them and get information about the current Bitcoin value, the market price and more! [Check it out here](https://yael273.github.io/mrBitcoin-angular/ "Website link")
 
-## Development server
+![mrbitcoin-homepage](https://user-images.githubusercontent.com/118633927/225012672-d3864f2c-8198-4e41-a375-5b6bbf82b838.png)
+___
+### Table of Contents
+- [Description](#description)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Getting started](#getting-started)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
+<a name="description"/>
+I decided to learn a new framework because I want to keep expanding my knowledge and overcome new challenges.
 
-## Code scaffolding
+And a bit about the project - a small App that was built in a few days, which provides the user a list of contacts that they can transfer money to, a basic CRUDL and some information about the value of theirs fake bank currency in Bitcoin.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies
+<a name="technologies"/>
 
-## Build
+- Angular 15
+- chart.js
+- Angular-Router
+- Sass
+- Angular CLI & Github pages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
+<a name="features"/>
 
-## Running unit tests
+- Simple authentication - session storage.
+- Presenting data in a dashboard using charts from an open-source library.
+- CRUDL of contacts.
+- Responsive and well designed.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting started
+<a name="getting-started"/>
+Clone the project or download the files on top.
 
-## Running end-to-end tests
+```sh
+git clone https://github.com/Yael273/mrBitcoin-angular.git
+```
+Open the terminal and enter the following line to run it locally on your computer:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+ng serve --open
+```
+Builds and serves the app, and views it in the browser.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
